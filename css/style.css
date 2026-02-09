@@ -1124,6 +1124,15 @@ form {
     color: white;
 }
 
+/* Focus Visible */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+[role="button"]:focus-visible {
+    outline: 3px solid #1abc9c;
+    outline-offset: 2px;
+}
+
 @media print {
     .header,
     .tabs,
