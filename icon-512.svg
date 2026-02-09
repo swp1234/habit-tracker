@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .bg { fill: #0f0f23; }
+      .primary { fill: #2ecc71; }
+      .accent { fill: #ffffff; }
+    </style>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="512" height="512" rx="120"/>
+
+  <!-- Main icon: Checkmark in circle -->
+  <circle cx="256" cy="256" r="180" fill="url(#grad)" opacity="0.2"/>
+  <circle cx="256" cy="256" r="160" fill="url(#grad)"/>
+
+  <!-- Checkmark -->
+  <g class="accent" transform="translate(256, 256)">
+    <path d="M -50 0 L -10 50 L 60 -50" stroke="white" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Flame accent (top right) -->
+  <g transform="translate(370, 110)">
+    <path class="primary" d="M 0 30 Q -15 10 0 -30 Q 15 10 0 30 Z" opacity="0.9"/>
+  </g>
+
+  <!-- Star accent (bottom) -->
+  <g transform="translate(256, 380)" class="primary" opacity="0.7">
+    <polygon points="0,-25 8,-8 25,-8 10,4 15,25 0,13 -15,25 -10,4 -25,-8 -8,-8" fill="currentColor"/>
+  </g>
+
+  <!-- Decorative circles -->
+  <circle cx="100" cy="150" r="15" class="primary" opacity="0.4"/>
+  <circle cx="450" cy="380" r="20" class="primary" opacity="0.3"/>
+</svg>

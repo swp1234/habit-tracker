@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "description": "Track your habits and achieve your goals. Visualize your daily progress and stay motivated."
+  },
+  "app": {
+    "title": "Habit Tracker",
+    "description": "Efficient tracking tool to build better habits"
+  },
+  "header": {
+    "subtitle": "Build better habits daily"
+  },
+  "nav": {
+    "today": "Today",
+    "habits": "Habits",
+    "stats": "Statistics",
+    "heatmap": "Heatmap"
+  },
+  "today": {
+    "challenge": "Today's Challenge",
+    "completed": "Completed",
+    "rate": "Completion Rate"
+  },
+  "habits": {
+    "title": "My Habits",
+    "add": "+ Add Habit",
+    "templates": "Quick Templates",
+    "myhabits": "My Habits",
+    "empty": "No habits yet. Create your first habit!"
+  },
+  "stats": {
+    "title": "Statistics",
+    "weekly": "Weekly Achievement",
+    "monthly": "Monthly Achievement",
+    "badges": "Achievements"
+  },
+  "heatmap": {
+    "title": "Annual Heatmap",
+    "share": "📸 Share"
+  },
+  "modal": {
+    "add": "Add Habit",
+    "edit": "Edit Habit"
+  },
+  "form": {
+    "name": "Habit Name",
+    "icon": "Select Icon",
+    "category": "Category",
+    "frequency": "Frequency",
+    "goal": "Goal (days)",
+    "save": "Save",
+    "delete": "Delete",
+    "health": "Health",
+    "learning": "Learning",
+    "exercise": "Exercise",
+    "mindfulness": "Mindfulness",
+    "productivity": "Productivity",
+    "daily": "Daily",
+    "weekly": "3x Weekly",
+    "custom": "Custom"
+  },
+  "premium": {
+    "title": "AI Habit Analysis",
+    "description": "Watch an ad to unlock AI analysis of your habit patterns",
+    "watchad": "📺 Watch Ad"
+  },
+  "templates": {
+    "water": "💧 Drink Water",
+    "exercise": "🏃 Exercise",
+    "reading": "📚 Reading",
+    "meditation": "🧘 Meditation",
+    "music": "🎵 Music Practice",
+    "cycling": "🚴 Cycling",
+    "strength": "💪 Strength Training",
+    "swimming": "🏊 Swimming"
+  },
+  "badges": {
+    "streak7": "7 Day Streak",
+    "streak30": "30 Day Streak",
+    "streak100": "100 Day Streak",
+    "early": "Early Riser",
+    "consistent": "Consistent Challenger",
+    "allstar": "All Star"
+  },
+  "analysis": {
+    "pattern": "Pattern Analysis",
+    "recommendation": "Recommendation",
+    "insight": "Insight",
+    "consistency": "Consistency"
+  }
+}

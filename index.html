@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f0f23">
+    <meta name="description" data-i18n="meta.description">
+    <meta name="keywords" content="습관, 추적기, 생산성, 목표, 습관 형성">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8GSWM40TV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-J8GSWM40TV');
+    </script>
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Habit Tracker - 습관 추적기">
+    <meta property="og:description" content="습관을 추적하고 목표를 달성하세요. 연속 달성 스트릭, 통계, 동기부여 명언과 함께.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dopabrain.com/habit-tracker/">
+    <meta property="og:image" content="https://dopabrain.com/habit-tracker/icon-512.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Habit Tracker">
+    <meta name="twitter:description" content="습관을 추적하고 목표를 달성하세요.">
+
+    <!-- Schema.org WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Habit Tracker",
+        "description": "습관 추적 및 목표 달성 앱",
+        "url": "https://dopabrain.com/habit-tracker/",
+        "image": "https://dopabrain.com/habit-tracker/icon-512.svg",
+        "applicationCategory": "ProductivityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0"
+        }
+    }
+    </script>
+
+    <title data-i18n="app.title">Habit Tracker</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1 class="app-title" data-i18n="app.title">Habit Tracker</h1>
+                <p class="subtitle" data-i18n="header.subtitle">Build better habits daily</p>
+            </div>
+            <div class="header-right">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle dark/light mode" title="Theme">🌙</button>
+                <div class="language-selector">
+                    <button id="lang-toggle" class="btn-icon" aria-label="Select language" title="Language">🌐</button>
+                    <div id="lang-menu" class="lang-menu hidden">
+                        <button class="lang-option" data-lang="ko">🇰🇷 한국어</button>
+                        <button class="lang-option" data-lang="en">🇺🇸 English</button>
+                        <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+                        <button class="lang-option" data-lang="zh">🇨🇳 中文</button>
+                        <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+                        <button class="lang-option" data-lang="pt">🇧🇷 Português</button>
+                        <button class="lang-option" data-lang="id">🇮🇩 Bahasa Indonesia</button>
+                        <button class="lang-option" data-lang="tr">🇹🇷 Türkçe</button>
+                        <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
+                        <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+                        <button class="lang-option" data-lang="hi">🇮🇳 हिन्दी</button>
+                        <button class="lang-option" data-lang="ru">🇷🇺 Русский</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Motivation Quote -->
+        <div class="quote-section">
+            <p class="daily-quote" id="daily-quote"></p>
+            <small class="quote-author" id="quote-author"></small>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="today" data-i18n="nav.today">Today</button>
+            <button class="tab-btn" data-tab="habits" data-i18n="nav.habits">Habits</button>
+            <button class="tab-btn" data-tab="stats" data-i18n="nav.stats">Statistics</button>
+            <button class="tab-btn" data-tab="heatmap" data-i18n="nav.heatmap">Heatmap</button>
+        </nav>
+
+        <!-- TODAY Tab -->
+        <section id="today-tab" class="tab-content active">
+            <div class="today-container">
+                <div class="daily-challenge">
+                    <h2 data-i18n="today.challenge">Today's Challenge</h2>
+                    <div id="todays-habits" class="habits-list">
+                        <!-- Filled dynamically -->
+                    </div>
+                    <div class="completion-stats">
+                        <div class="stat-box">
+                            <div class="stat-label" data-i18n="today.completed">Completed</div>
+                            <div class="stat-value"><span id="completed-count">0</span>/<span id="total-count">0</span></div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label" data-i18n="today.rate">Completion Rate</div>
+                            <div class="stat-value"><span id="completion-rate">0</span>%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABITS Tab -->
+        <section id="habits-tab" class="tab-content">
+            <div class="habits-container">
+                <div class="habits-header">
+                    <h2 data-i18n="habits.title">My Habits</h2>
+                    <button id="add-habit-btn" class="btn btn-primary" data-i18n="habits.add">+ Add Habit</button>
+                </div>
+
+                <!-- Quick Templates -->
+                <div class="templates-section">
+                    <h3 data-i18n="habits.templates">Quick Templates</h3>
+                    <div id="templates-list" class="templates-grid">
+                        <!-- Filled dynamically -->
+                    </div>
+                </div>
+
+                <!-- My Habits List -->
+                <div class="my-habits-section">
+                    <h3 data-i18n="habits.myhabits">My Habits</h3>
+                    <div id="habits-list" class="habits-list">
+                        <p class="empty-state" data-i18n="habits.empty">No habits yet. Create your first habit!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS Tab -->
+        <section id="stats-tab" class="tab-content">
+            <div class="stats-container">
+                <h2 data-i18n="stats.title">Statistics</h2>
+
+                <!-- Weekly Stats -->
+                <div class="stat-card">
+                    <h3 data-i18n="stats.weekly">Weekly Achievement</h3>
+                    <div id="weekly-stats" class="stats-chart">
+                        <!-- Filled dynamically -->
+                    </div>
+                </div>
+
+                <!-- Monthly Stats -->
+                <div class="stat-card">
+                    <h3 data-i18n="stats.monthly">Monthly Achievement</h3>
+                    <div id="monthly-stats" class="stats-chart">
+                        <!-- Filled dynamically -->
+                    </div>
+                </div>
+
+                <!-- Badges -->
+                <div class="badges-section">
+                    <h3 data-i18n="stats.badges">Achievements</h3>
+                    <div id="badges-list" class="badges-grid">
+                        <!-- Filled dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HEATMAP Tab -->
+        <section id="heatmap-tab" class="tab-content">
+            <div class="heatmap-container">
+                <h2 data-i18n="heatmap.title">Annual Heatmap</h2>
+                <div class="heatmap-controls">
+                    <select id="heatmap-habit" class="select">
+                        <option value="">All Habits</option>
+                    </select>
+                    <button id="share-btn" class="btn btn-secondary" data-i18n="heatmap.share">📸 Share</button>
+                </div>
+                <div id="heatmap" class="github-heatmap">
+                    <!-- Filled dynamically -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Add/Edit Habit Modal -->
+    <div id="habit-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title" data-i18n="modal.add">Add Habit</h2>
+                <button class="btn-close" id="close-modal">&times;</button>
+            </div>
+            <form id="habit-form">
+                <div class="form-group">
+                    <label data-i18n="form.name">Habit Name</label>
+                    <input type="text" id="habit-name" required placeholder="e.g., Morning Exercise">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.icon">Icon</label>
+                    <div id="icon-picker" class="icon-picker">
+                        🏃 💧 📚 🧘 🎵 🚴 💪 🏊 🤸 🧗 🏋️ 🤾
+                    </div>
+                    <input type="hidden" id="habit-icon" value="🏃">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.category">Category</label>
+                    <select id="habit-category">
+                        <option value="health" data-i18n="form.health">Health</option>
+                        <option value="learning" data-i18n="form.learning">Learning</option>
+                        <option value="exercise" data-i18n="form.exercise">Exercise</option>
+                        <option value="mindfulness" data-i18n="form.mindfulness">Mindfulness</option>
+                        <option value="productivity" data-i18n="form.productivity">Productivity</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.frequency">Frequency</label>
+                    <select id="habit-frequency">
+                        <option value="daily" data-i18n="form.daily">Daily</option>
+                        <option value="weekly" data-i18n="form.weekly">Weekly (3x)</option>
+                        <option value="custom" data-i18n="form.custom">Custom</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.goal">Goal (days)</label>
+                    <input type="number" id="habit-goal" value="30" min="1" max="365">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" data-i18n="form.save">Save</button>
+                    <button type="button" class="btn btn-secondary" id="delete-btn" data-i18n="form.delete" style="display: none;">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Premium Modal -->
+    <div id="premium-modal" class="modal hidden">
+        <div class="modal-content premium-modal">
+            <div class="modal-header">
+                <h2 data-i18n="premium.title">AI Habit Analysis</h2>
+                <button class="btn-close" id="close-premium">&times;</button>
+            </div>
+            <div class="premium-content">
+                <p data-i18n="premium.description">Watch an ad to unlock AI analysis of your habits</p>
+                <div id="premium-result" class="premium-result hidden">
+                    <!-- Filled after ad -->
+                </div>
+                <button id="watch-ad-btn" class="btn btn-primary" data-i18n="premium.watchad">📺 Watch Ad</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Slots -->
+    <div id="ad-top" class="ad-slot" style="min-height: 60px;">
+        <!-- Google AdSense Banner -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3600813755953882" data-ad-slot="1234567890" data-ad-format="horizontal"></ins>
+    </div>
+
+    <div id="ad-bottom" class="ad-slot" style="min-height: 60px;">
+        <!-- Google AdSense Banner -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3600813755953882" data-ad-slot="0987654321" data-ad-format="horizontal"></ins>
+    </div>
+
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(err => console.log('SW registration failed:', err));
+        }
+    </script>
+
+    <!-- i18n and App Scripts -->
+    <script src="js/i18n.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

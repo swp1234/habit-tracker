@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "description": "Suivez vos habitudes et atteignez vos objectifs. Visualisez votre progression quotidienne et restez motivé."
+  },
+  "app": {
+    "title": "Suivi des Habitudes",
+    "description": "Outil de suivi efficace pour développer de meilleures habitudes"
+  },
+  "header": {
+    "subtitle": "Construisez de meilleures habitudes chaque jour"
+  },
+  "nav": {
+    "today": "Aujourd'hui",
+    "habits": "Habitudes",
+    "stats": "Statistiques",
+    "heatmap": "Carte de Chaleur"
+  },
+  "today": {
+    "challenge": "Défi du Jour",
+    "completed": "Complété",
+    "rate": "Taux de Complétion"
+  },
+  "habits": {
+    "title": "Mes Habitudes",
+    "add": "+ Ajouter Habitude",
+    "templates": "Modèles Rapides",
+    "myhabits": "Mes Habitudes",
+    "empty": "Pas encore d'habitudes. Créez votre première habitude!"
+  },
+  "stats": {
+    "title": "Statistiques",
+    "weekly": "Réalisations Hebdomadaires",
+    "monthly": "Réalisations Mensuelles",
+    "badges": "Réalisations et Badges"
+  },
+  "heatmap": {
+    "title": "Carte de Chaleur Annuelle",
+    "share": "📸 Partager"
+  },
+  "modal": {
+    "add": "Ajouter Habitude",
+    "edit": "Modifier Habitude"
+  },
+  "form": {
+    "name": "Nom de l'Habitude",
+    "icon": "Sélectionner Icône",
+    "category": "Catégorie",
+    "frequency": "Fréquence",
+    "goal": "Objectif (jours)",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "health": "Santé",
+    "learning": "Apprentissage",
+    "exercise": "Exercice",
+    "mindfulness": "Pleine Conscience",
+    "productivity": "Productivité",
+    "daily": "Quotidien",
+    "weekly": "3x par Semaine",
+    "custom": "Personnalisé"
+  },
+  "premium": {
+    "title": "Analyse d'Habitude par IA",
+    "description": "Regardez une publicité pour déverrouiller l'analyse IA de vos modèles d'habitude",
+    "watchad": "📺 Regarder Publicité"
+  },
+  "templates": {
+    "water": "💧 Boire de l'Eau",
+    "exercise": "🏃 Exercice",
+    "reading": "📚 Lecture",
+    "meditation": "🧘 Méditation",
+    "music": "🎵 Pratique Musicale",
+    "cycling": "🚴 Cyclisme",
+    "strength": "💪 Entraînement de Force",
+    "swimming": "🏊 Natation"
+  },
+  "badges": {
+    "streak7": "Série de 7 Jours",
+    "streak30": "Série de 30 Jours",
+    "streak100": "Série de 100 Jours",
+    "early": "Lève-Tôt",
+    "consistent": "Challenger Constant",
+    "allstar": "Vedette"
+  },
+  "analysis": {
+    "pattern": "Analyse des Motifs",
+    "recommendation": "Recommandation",
+    "insight": "Aperçu",
+    "consistency": "Cohérence"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "description": "Rastreie seus hábitos e alcance seus objetivos. Visualize seu progresso diário e mantenha-se motivado."
+  },
+  "app": {
+    "title": "Rastreador de Hábitos",
+    "description": "Ferramenta eficiente de rastreamento para construir melhores hábitos"
+  },
+  "header": {
+    "subtitle": "Construa melhores hábitos todos os dias"
+  },
+  "nav": {
+    "today": "Hoje",
+    "habits": "Hábitos",
+    "stats": "Estatísticas",
+    "heatmap": "Mapa de Calor"
+  },
+  "today": {
+    "challenge": "Desafio de Hoje",
+    "completed": "Concluído",
+    "rate": "Taxa de Conclusão"
+  },
+  "habits": {
+    "title": "Meus Hábitos",
+    "add": "+ Adicionar Hábito",
+    "templates": "Modelos Rápidos",
+    "myhabits": "Meus Hábitos",
+    "empty": "Sem hábitos ainda. Crie seu primeiro hábito!"
+  },
+  "stats": {
+    "title": "Estatísticas",
+    "weekly": "Realizações Semanais",
+    "monthly": "Realizações Mensais",
+    "badges": "Conquistas e Distintivos"
+  },
+  "heatmap": {
+    "title": "Mapa de Calor Anual",
+    "share": "📸 Compartilhar"
+  },
+  "modal": {
+    "add": "Adicionar Hábito",
+    "edit": "Editar Hábito"
+  },
+  "form": {
+    "name": "Nome do Hábito",
+    "icon": "Selecionar Ícone",
+    "category": "Categoria",
+    "frequency": "Frequência",
+    "goal": "Meta (dias)",
+    "save": "Salvar",
+    "delete": "Excluir",
+    "health": "Saúde",
+    "learning": "Aprendizagem",
+    "exercise": "Exercício",
+    "mindfulness": "Atenção Plena",
+    "productivity": "Produtividade",
+    "daily": "Diário",
+    "weekly": "3x por Semana",
+    "custom": "Personalizado"
+  },
+  "premium": {
+    "title": "Análise de Hábitos com IA",
+    "description": "Assista a um anúncio para desbloquear a análise de IA de seus padrões de hábito",
+    "watchad": "📺 Assistir Anúncio"
+  },
+  "templates": {
+    "water": "💧 Beber Água",
+    "exercise": "🏃 Exercício",
+    "reading": "📚 Leitura",
+    "meditation": "🧘 Meditação",
+    "music": "🎵 Prática de Música",
+    "cycling": "🚴 Ciclismo",
+    "strength": "💪 Treinamento de Força",
+    "swimming": "🏊 Natação"
+  },
+  "badges": {
+    "streak7": "Sequência de 7 Dias",
+    "streak30": "Sequência de 30 Dias",
+    "streak100": "Sequência de 100 Dias",
+    "early": "Madrugador",
+    "consistent": "Desafiador Consistente",
+    "allstar": "Astro Completo"
+  },
+  "analysis": {
+    "pattern": "Análise de Padrões",
+    "recommendation": "Recomendação",
+    "insight": "Perspectiva",
+    "consistency": "Consistência"
+  }
+}

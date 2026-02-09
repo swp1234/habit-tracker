@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "description": "Verfolgen Sie Ihre Gewohnheiten und erreichen Sie Ihre Ziele. Visualisieren Sie Ihren täglichen Fortschritt und bleiben Sie motiviert."
+  },
+  "app": {
+    "title": "Gewohnheits-Tracker",
+    "description": "Effizientes Tracking-Tool zum Aufbau besserer Gewohnheiten"
+  },
+  "header": {
+    "subtitle": "Bauen Sie jeden Tag bessere Gewohnheiten auf"
+  },
+  "nav": {
+    "today": "Heute",
+    "habits": "Gewohnheiten",
+    "stats": "Statistiken",
+    "heatmap": "Wärmekarte"
+  },
+  "today": {
+    "challenge": "Heutige Herausforderung",
+    "completed": "Abgeschlossen",
+    "rate": "Abschlussquote"
+  },
+  "habits": {
+    "title": "Meine Gewohnheiten",
+    "add": "+ Gewohnheit Hinzufügen",
+    "templates": "Schnellvorlagen",
+    "myhabits": "Meine Gewohnheiten",
+    "empty": "Noch keine Gewohnheiten. Erstellen Sie Ihre erste Gewohnheit!"
+  },
+  "stats": {
+    "title": "Statistiken",
+    "weekly": "Wöchentliche Erfolge",
+    "monthly": "Monatliche Erfolge",
+    "badges": "Erfolge und Abzeichen"
+  },
+  "heatmap": {
+    "title": "Jährliche Wärmekarte",
+    "share": "📸 Teilen"
+  },
+  "modal": {
+    "add": "Gewohnheit Hinzufügen",
+    "edit": "Gewohnheit Bearbeiten"
+  },
+  "form": {
+    "name": "Name der Gewohnheit",
+    "icon": "Symbol Wählen",
+    "category": "Kategorie",
+    "frequency": "Häufigkeit",
+    "goal": "Ziel (Tage)",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "health": "Gesundheit",
+    "learning": "Lernen",
+    "exercise": "Bewegung",
+    "mindfulness": "Achtsamkeit",
+    "productivity": "Produktivität",
+    "daily": "Täglich",
+    "weekly": "3x Wöchentlich",
+    "custom": "Benutzerdefiniert"
+  },
+  "premium": {
+    "title": "KI-Gewohnheitsanalyse",
+    "description": "Sehen Sie sich eine Anzeige an, um die KI-Analyse Ihrer Gewohnheitsmuster freizuschalten",
+    "watchad": "📺 Anzeige Ansehen"
+  },
+  "templates": {
+    "water": "💧 Wasser Trinken",
+    "exercise": "🏃 Bewegung",
+    "reading": "📚 Lesen",
+    "meditation": "🧘 Meditation",
+    "music": "🎵 Musikpraxis",
+    "cycling": "🚴 Radfahren",
+    "strength": "💪 Krafttraining",
+    "swimming": "🏊 Schwimmen"
+  },
+  "badges": {
+    "streak7": "7-Tage-Serie",
+    "streak30": "30-Tage-Serie",
+    "streak100": "100-Tage-Serie",
+    "early": "Frühaufsteher",
+    "consistent": "Konsistenter Herausforderer",
+    "allstar": "Allstar"
+  },
+  "analysis": {
+    "pattern": "Musteranalyse",
+    "recommendation": "Empfehlung",
+    "insight": "Einsicht",
+    "consistency": "Konsistenz"
+  }
+}

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <style>
+      .bg { fill: #0f0f23; }
+      .primary { fill: #2ecc71; }
+      .accent { fill: #ffffff; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="192" height="192" rx="45"/>
+
+  <!-- Main icon: Checkmark in circle -->
+  <circle cx="96" cy="96" r="70" class="primary" opacity="0.2"/>
+  <circle cx="96" cy="96" r="60" class="primary"/>
+
+  <!-- Checkmark -->
+  <g class="accent" transform="translate(96, 96)">
+    <path d="M -20 0 L -5 15 L 20 -15" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Flame accent (top right) -->
+  <g transform="translate(140, 50)">
+    <path class="primary" d="M 0 10 Q -5 0 0 -10 Q 5 0 0 10 Z" opacity="0.8"/>
+  </g>
+
+  <!-- Star accent (bottom) -->
+  <g transform="translate(96, 150)" class="primary" opacity="0.6">
+    <polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,4 -5,8 -3,2 -8,-2 -2,-2" fill="currentColor"/>
+  </g>
+</svg>

@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "description": "Lacak kebiasaan Anda dan capai tujuan Anda. Visualisasikan kemajuan harian Anda dan tetap termotivasi."
+  },
+  "app": {
+    "title": "Pelacak Kebiasaan",
+    "description": "Alat pelacakan efisien untuk membangun kebiasaan yang lebih baik"
+  },
+  "header": {
+    "subtitle": "Bangun kebiasaan yang lebih baik setiap hari"
+  },
+  "nav": {
+    "today": "Hari Ini",
+    "habits": "Kebiasaan",
+    "stats": "Statistik",
+    "heatmap": "Peta Panas"
+  },
+  "today": {
+    "challenge": "Tantangan Hari Ini",
+    "completed": "Selesai",
+    "rate": "Tingkat Penyelesaian"
+  },
+  "habits": {
+    "title": "Kebiasaan Saya",
+    "add": "+ Tambah Kebiasaan",
+    "templates": "Template Cepat",
+    "myhabits": "Kebiasaan Saya",
+    "empty": "Belum ada kebiasaan. Buat kebiasaan pertama Anda!"
+  },
+  "stats": {
+    "title": "Statistik",
+    "weekly": "Pencapaian Mingguan",
+    "monthly": "Pencapaian Bulanan",
+    "badges": "Prestasi dan Lencana"
+  },
+  "heatmap": {
+    "title": "Peta Panas Tahunan",
+    "share": "📸 Bagikan"
+  },
+  "modal": {
+    "add": "Tambah Kebiasaan",
+    "edit": "Edit Kebiasaan"
+  },
+  "form": {
+    "name": "Nama Kebiasaan",
+    "icon": "Pilih Ikon",
+    "category": "Kategori",
+    "frequency": "Frekuensi",
+    "goal": "Target (hari)",
+    "save": "Simpan",
+    "delete": "Hapus",
+    "health": "Kesehatan",
+    "learning": "Pembelajaran",
+    "exercise": "Olahraga",
+    "mindfulness": "Kesadaran",
+    "productivity": "Produktivitas",
+    "daily": "Setiap Hari",
+    "weekly": "3x Seminggu",
+    "custom": "Khusus"
+  },
+  "premium": {
+    "title": "Analisis Kebiasaan AI",
+    "description": "Tonton iklan untuk membuka kunci analisis AI pola kebiasaan Anda",
+    "watchad": "📺 Tonton Iklan"
+  },
+  "templates": {
+    "water": "💧 Minum Air",
+    "exercise": "🏃 Olahraga",
+    "reading": "📚 Membaca",
+    "meditation": "🧘 Meditasi",
+    "music": "🎵 Latihan Musik",
+    "cycling": "🚴 Bersepeda",
+    "strength": "💪 Latihan Kekuatan",
+    "swimming": "🏊 Berenang"
+  },
+  "badges": {
+    "streak7": "Garis 7 Hari",
+    "streak30": "Garis 30 Hari",
+    "streak100": "Garis 100 Hari",
+    "early": "Pengguna Pagi",
+    "consistent": "Penantang Konsisten",
+    "allstar": "Bintang Semua"
+  },
+  "analysis": {
+    "pattern": "Analisis Pola",
+    "recommendation": "Rekomendasi",
+    "insight": "Wawasan",
+    "consistency": "Konsistensi"
+  }
+}

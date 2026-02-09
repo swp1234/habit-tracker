@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "description": "Alışkanlıklarınızı takip edin ve hedeflerinize ulaşın. Günlük ilerlemenizi görselleştirin ve motive kalın."
+  },
+  "app": {
+    "title": "Alışkanlık Takip Aracı",
+    "description": "Daha iyi alışkanlıklar oluşturmak için verimli izleme aracı"
+  },
+  "header": {
+    "subtitle": "Her gün daha iyi alışkanlıklar oluşturun"
+  },
+  "nav": {
+    "today": "Bugün",
+    "habits": "Alışkanlıklar",
+    "stats": "İstatistikler",
+    "heatmap": "Isı Haritası"
+  },
+  "today": {
+    "challenge": "Bugünün Ödevi",
+    "completed": "Tamamlanmış",
+    "rate": "Tamamlanma Oranı"
+  },
+  "habits": {
+    "title": "Alışkanlıklarım",
+    "add": "+ Alışkanlık Ekle",
+    "templates": "Hızlı Şablonlar",
+    "myhabits": "Alışkanlıklarım",
+    "empty": "Henüz alışkanlık yok. İlk alışkanlığınızı oluşturun!"
+  },
+  "stats": {
+    "title": "İstatistikler",
+    "weekly": "Haftalık Başarı",
+    "monthly": "Aylık Başarı",
+    "badges": "Başarılar ve Rozetler"
+  },
+  "heatmap": {
+    "title": "Yıllık Isı Haritası",
+    "share": "📸 Paylaş"
+  },
+  "modal": {
+    "add": "Alışkanlık Ekle",
+    "edit": "Alışkanlığı Düzenle"
+  },
+  "form": {
+    "name": "Alışkanlık Adı",
+    "icon": "İkon Seç",
+    "category": "Kategori",
+    "frequency": "Sıklık",
+    "goal": "Hedef (gün)",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "health": "Sağlık",
+    "learning": "Öğrenme",
+    "exercise": "Egzersiz",
+    "mindfulness": "Bilinç",
+    "productivity": "Verimlilik",
+    "daily": "Günlük",
+    "weekly": "Haftada 3 Gün",
+    "custom": "Özel"
+  },
+  "premium": {
+    "title": "Yapay Zeka Alışkanlık Analizi",
+    "description": "Alışkanlık modellerinizin yapay zeka analizini açmak için bir reklam izleyin",
+    "watchad": "📺 Reklam İzle"
+  },
+  "templates": {
+    "water": "💧 Su İçin",
+    "exercise": "🏃 Egzersiz",
+    "reading": "📚 Okuma",
+    "meditation": "🧘 Meditasyon",
+    "music": "🎵 Müzik Pratiği",
+    "cycling": "🚴 Bisiklet",
+    "strength": "💪 Güç Antrenmanı",
+    "swimming": "🏊 Yüzme"
+  },
+  "badges": {
+    "streak7": "7 Günlük Dizi",
+    "streak30": "30 Günlük Dizi",
+    "streak100": "100 Günlük Dizi",
+    "early": "Erken Kuş",
+    "consistent": "Tutarlı Savaşçı",
+    "allstar": "Yıldız Oyuncu"
+  },
+  "analysis": {
+    "pattern": "Desen Analizi",
+    "recommendation": "Tavsiye",
+    "insight": "İçgörü",
+    "consistency": "Tutarlılık"
+  }
+}
