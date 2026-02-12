@@ -290,6 +290,7 @@ class HabitTracker {
                 habit.goal = goal;
             }
         } else {
+            if(typeof gtag!=='undefined') gtag('event','add_habit');
             this.habits.push({
                 id: Date.now().toString(),
                 name,
@@ -330,6 +331,7 @@ class HabitTracker {
         const today = this.getDateString();
         const key = `${habitId}_${today}`;
         this.completions[key] = !this.completions[key];
+        if(this.completions[key] && typeof gtag!=='undefined') gtag('event','complete_habit');
         this.saveData();
 
         // Auto-dismiss onboarding after first completion
