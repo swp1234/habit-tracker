@@ -89,5 +89,14 @@
     "recommendation": "Empfehlung",
     "insight": "Einsicht",
     "consistency": "Konsistenz"
+  },
+  "onboarding": {
+    "title": "Willkommen! So funktioniert es",
+    "step1": "Tippen Sie auf den Kreis zum Abschliessen",
+    "step2": "Bauen Sie Ihre Serie auf",
+    "step3": "Verfolgen Sie Ihren Fortschritt",
+    "tapHere": "Hier tippen!",
+    "dismiss": "Verstanden!",
+    "welcomeQuote": "Kleine Gewohnheiten schaffen grosse Veranderungen"
   }
 }

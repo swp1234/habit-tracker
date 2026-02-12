@@ -331,6 +331,12 @@ class HabitTracker {
         const key = `${habitId}_${today}`;
         this.completions[key] = !this.completions[key];
         this.saveData();
+
+        // Auto-dismiss onboarding after first completion
+        if (this.completions[key] && !localStorage.getItem('onboardingDismissed')) {
+            this.dismissWelcome();
+        }
+
         this.renderUI();
     }
 
@@ -394,12 +400,43 @@ class HabitTracker {
         const quoteEl = document.getElementById('daily-quote');
         const authorEl = document.getElementById('quote-author');
         if (quoteEl) {
-            quoteEl.textContent = this._t('today.emptySubtitle', 'Small habits create big changes');
+            quoteEl.textContent = this._t('onboarding.welcomeQuote', 'Small habits create big changes');
             quoteEl.style.fontSize = '1.3rem';
         }
         if (authorEl) {
             authorEl.textContent = this._t('header.subtitle', 'Build better habits daily');
         }
+
+        // Add pulse animation to Add Habit buttons
+        const addBtnToday = document.getElementById('add-habit-today-btn');
+        const addBtnHabits = document.getElementById('add-habit-btn');
+        if (addBtnToday) addBtnToday.classList.add('btn-pulse');
+        if (addBtnHabits) addBtnHabits.classList.add('btn-pulse');
+    }
+
+    /**
+     * Dismiss the welcome banner and remove onboarding hints
+     */
+    dismissWelcome() {
+        localStorage.setItem('onboardingDismissed', 'true');
+        const banner = document.getElementById('welcome-banner');
+        if (banner) {
+            banner.style.transition = 'opacity 0.3s ease, max-height 0.3s ease';
+            banner.style.opacity = '0';
+            banner.style.maxHeight = '0';
+            banner.style.overflow = 'hidden';
+            banner.style.padding = '0';
+            banner.style.margin = '0';
+            setTimeout(() => banner.remove(), 300);
+        }
+        // Remove checkbox highlights
+        document.querySelectorAll('.onboarding-highlight').forEach(el => {
+            el.classList.remove('onboarding-highlight');
+        });
+        // Remove tooltip
+        document.querySelectorAll('.onboarding-tooltip').forEach(el => {
+            el.classList.remove('onboarding-tooltip');
+        });
     }
 
     /**
@@ -408,6 +445,8 @@ class HabitTracker {
     renderTodayTab() {
         const container = document.getElementById('todays-habits');
         const today = this.getDateString();
+        const showOnboarding = this.isFirstVisit && !localStorage.getItem('onboardingDismissed');
+        const hasAnyCompletion = Object.values(this.completions).some(v => v);
 
         if (this.habits.length === 0) {
             container.innerHTML = `
@@ -415,21 +454,49 @@ class HabitTracker {
                     <div class="empty-state-emoji">🎯</div>
                     <div class="empty-state-title">${this._t('today.emptyState', 'Create your first habit!')}</div>
                     <div class="empty-state-subtitle">${this._t('today.emptySubtitle', 'Small habits create big changes')}</div>
-                    <button class="btn btn-primary btn-large" onclick="app.currentEditingId=null;app.openHabitModal();">
+                    <button class="btn btn-primary btn-large btn-pulse" onclick="app.currentEditingId=null;app.openHabitModal();">
                         ${this._t('today.addHabit', 'Add Habit')}
                     </button>
                 </div>`;
             return;
         }
 
-        container.innerHTML = this.habits.map(habit => {
+        // Build welcome banner HTML for first-time users
+        let welcomeHtml = '';
+        if (showOnboarding && !hasAnyCompletion) {
+            welcomeHtml = `
+                <div class="welcome-banner" id="welcome-banner">
+                    <div class="welcome-banner-title">${this._t('onboarding.title', 'Welcome! Here\'s how it works')}</div>
+                    <div class="welcome-banner-steps">
+                        <div class="welcome-step">
+                            <div class="welcome-step-num">1</div>
+                            <div class="welcome-step-text">${this._t('onboarding.step1', 'Tap the circle to complete')}</div>
+                        </div>
+                        <div class="welcome-step">
+                            <div class="welcome-step-num">2</div>
+                            <div class="welcome-step-text">${this._t('onboarding.step2', 'Build your streak')}</div>
+                        </div>
+                        <div class="welcome-step">
+                            <div class="welcome-step-num">3</div>
+                            <div class="welcome-step-text">${this._t('onboarding.step3', 'Track your progress')}</div>
+                        </div>
+                    </div>
+                    <button class="welcome-dismiss" onclick="app.dismissWelcome()">${this._t('onboarding.dismiss', 'Got it!')}</button>
+                </div>`;
+        }
+
+        container.innerHTML = welcomeHtml + this.habits.map((habit, index) => {
             const key = `${habit.id}_${today}`;
             const isCompleted = this.completions[key] || false;
             const streak = this.getStreak(habit.id);
+            // Highlight first uncompleted checkbox for onboarding
+            const isFirstUncompleted = showOnboarding && !hasAnyCompletion && !isCompleted && index === 0;
+            const checkboxClass = `habit-checkbox ${isCompleted ? 'checked' : ''} ${isFirstUncompleted ? 'onboarding-highlight' : ''}`;
+            const tooltipAttr = isFirstUncompleted ? `class="onboarding-tooltip" data-tooltip="${this._t('onboarding.tapHere', 'Tap here!')}"` : '';
 
             return `
-                <div class="habit-item ${isCompleted ? 'completed' : ''}">
-                    <button class="habit-checkbox ${isCompleted ? 'checked' : ''}"
+                <div class="habit-item ${isCompleted ? 'completed' : ''}" ${tooltipAttr}>
+                    <button class="${checkboxClass}"
                             onclick="app.toggleHabitCompletion('${habit.id}')"
                             aria-label="Toggle habit completion">
                         ${isCompleted ? '✓' : ''}

@@ -89,5 +89,14 @@
     "recommendation": "建议",
     "insight": "见解",
     "consistency": "一致性"
+  },
+  "onboarding": {
+    "title": "欢迎！以下是使用方法",
+    "step1": "点击圆圈完成",
+    "step2": "建立你的连续记录",
+    "step3": "跟踪你的进度",
+    "tapHere": "点击这里！",
+    "dismiss": "知道了！",
+    "welcomeQuote": "小习惯创造大变化"
   }
 }

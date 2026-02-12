@@ -89,5 +89,14 @@
     "recommendation": "추천",
     "insight": "인사이트",
     "consistency": "일관성"
+  },
+  "onboarding": {
+    "title": "환영합니다! 사용법을 알려드릴게요",
+    "step1": "원을 탭하여 완료하세요",
+    "step2": "연속 기록을 쌓으세요",
+    "step3": "진행 상황을 확인하세요",
+    "tapHere": "여기를 탭!",
+    "dismiss": "알겠어요!",
+    "welcomeQuote": "작은 습관이 큰 변화를 만듭니다"
   }
 }

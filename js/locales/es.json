@@ -89,5 +89,14 @@
     "recommendation": "Recomendación",
     "insight": "Perspectiva",
     "consistency": "Consistencia"
+  },
+  "onboarding": {
+    "title": "Bienvenido! Asi es como funciona",
+    "step1": "Toca el circulo para completar",
+    "step2": "Construye tu racha",
+    "step3": "Sigue tu progreso",
+    "tapHere": "Toca aqui!",
+    "dismiss": "Entendido!",
+    "welcomeQuote": "Pequenos habitos crean grandes cambios"
   }
 }

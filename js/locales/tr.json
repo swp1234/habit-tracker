@@ -89,5 +89,14 @@
     "recommendation": "Tavsiye",
     "insight": "İçgörü",
     "consistency": "Tutarlılık"
+  },
+  "onboarding": {
+    "title": "Hosgeldiniz! Nasil calistigini gosterelim",
+    "step1": "Daireye dokunarak tamamlayin",
+    "step2": "Seri rekorunuzu olusturun",
+    "step3": "Ilerlemenizi takip edin",
+    "tapHere": "Buraya dokunun!",
+    "dismiss": "Anladim!",
+    "welcomeQuote": "Kucuk aliskanliklar buyuk degisimler yaratir"
   }
 }

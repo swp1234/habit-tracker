@@ -89,5 +89,14 @@
     "recommendation": "Rekomendasi",
     "insight": "Wawasan",
     "consistency": "Konsistensi"
+  },
+  "onboarding": {
+    "title": "Selamat datang! Begini caranya",
+    "step1": "Ketuk lingkaran untuk menyelesaikan",
+    "step2": "Bangun rekor beruntunmu",
+    "step3": "Lacak kemajuanmu",
+    "tapHere": "Ketuk di sini!",
+    "dismiss": "Mengerti!",
+    "welcomeQuote": "Kebiasaan kecil menciptakan perubahan besar"
   }
 }

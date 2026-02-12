@@ -89,5 +89,14 @@
     "recommendation": "推奨",
     "insight": "インサイト",
     "consistency": "一貫性"
+  },
+  "onboarding": {
+    "title": "ようこそ！使い方をご説明します",
+    "step1": "丸をタップして完了",
+    "step2": "連続記録を作ろう",
+    "step3": "進捗を確認しよう",
+    "tapHere": "ここをタップ！",
+    "dismiss": "わかりました！",
+    "welcomeQuote": "小さな習慣が大きな変化を生み出します"
   }
 }
