@@ -2,7 +2,7 @@
  * Service Worker - Offline Support and Caching
  */
 
-const CACHE_NAME = 'habit-tracker-v1';
+const CACHE_NAME = 'habit-tracker-v2';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -56,57 +56,27 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - network first, fallback to cache
 self.addEventListener('fetch', event => {
-    const { request } = event;
-    const url = new URL(request.url);
+    if (event.request.method !== 'GET') return;
 
-    // Skip non-GET requests
-    if (request.method !== 'GET') {
-        return;
-    }
-
-    // Skip external API calls (analytics, ads)
-    if (url.hostname !== location.hostname) {
-        return;
-    }
+    // Skip external requests (ads, analytics, etc.)
+    if (!event.request.url.startsWith(self.location.origin)) return;
 
     event.respondWith(
-        caches.match(request)
+        fetch(event.request)
             .then(response => {
-                // Return cached version if available
-                if (response) {
-                    return response;
-                }
-
-                // Network request
-                return fetch(request)
-                    .then(response => {
-                        // Don't cache non-successful responses
-                        if (!response || response.status !== 200 || response.type === 'error') {
-                            return response;
-                        }
-
-                        // Clone and cache successful responses
-                        const responseToCache = response.clone();
-                        caches.open(CACHE_NAME)
-                            .then(cache => {
-                                cache.put(request, responseToCache);
-                            });
-
-                        return response;
-                    })
-                    .catch(error => {
-                        console.error('Fetch error:', error);
-                        // Return offline page or empty response
-                        return new Response('Offline - please check your connection', {
-                            status: 503,
-                            statusText: 'Service Unavailable',
-                            headers: new Headers({
-                                'Content-Type': 'text/plain'
-                            })
-                        });
+                if (response && response.status === 200) {
+                    const responseToCache = response.clone();
+                    caches.open(CACHE_NAME).then(cache => {
+                        cache.put(event.request, responseToCache);
                     });
+                }
+                return response;
+            })
+            .catch(() => {
+                return caches.match(event.request)
+                    .then(cached => cached || caches.match('./index.html'));
             })
     );
 });
