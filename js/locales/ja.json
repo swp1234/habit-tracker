@@ -18,7 +18,10 @@
   "today": {
     "challenge": "今日のチャレンジ",
     "completed": "完了",
-    "rate": "達成率"
+    "rate": "達成率",
+    "emptyState": "最初の習慣を作成しましょう！",
+    "emptySubtitle": "小さな習慣が大きな変化を生み出します",
+    "addHabit": "習慣を追加"
   },
   "habits": {
     "title": "私の習慣",

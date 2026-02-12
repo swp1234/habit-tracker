@@ -18,7 +18,10 @@
   "today": {
     "challenge": "Tantangan Hari Ini",
     "completed": "Selesai",
-    "rate": "Tingkat Penyelesaian"
+    "rate": "Tingkat Penyelesaian",
+    "emptyState": "Buat kebiasaan pertama Anda!",
+    "emptySubtitle": "Kebiasaan kecil menciptakan perubahan besar",
+    "addHabit": "Tambah Kebiasaan"
   },
   "habits": {
     "title": "Kebiasaan Saya",

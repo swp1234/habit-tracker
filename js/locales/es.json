@@ -18,7 +18,10 @@
   "today": {
     "challenge": "Desafío de Hoy",
     "completed": "Completado",
-    "rate": "Tasa de Finalización"
+    "rate": "Tasa de Finalización",
+    "emptyState": "Crea tu primer hábito!",
+    "emptySubtitle": "Pequeños hábitos crean grandes cambios",
+    "addHabit": "Agregar Hábito"
   },
   "habits": {
     "title": "Mis Hábitos",

@@ -18,7 +18,10 @@
   "today": {
     "challenge": "Bugünün Ödevi",
     "completed": "Tamamlanmış",
-    "rate": "Tamamlanma Oranı"
+    "rate": "Tamamlanma Oranı",
+    "emptyState": "İlk alışkanlığınızı oluşturun!",
+    "emptySubtitle": "Küçük alışkanlıklar büyük değişimler yaratır",
+    "addHabit": "Alışkanlık Ekle"
   },
   "habits": {
     "title": "Alışkanlıklarım",

@@ -194,8 +194,16 @@ class I18n {
 const i18n = new I18n();
 
 // Initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => i18n.init());
-} else {
-    i18n.init();
-}
+(async function initI18n() {
+    if (document.readyState === 'loading') {
+        await new Promise(resolve => document.addEventListener('DOMContentLoaded', resolve));
+    }
+    try {
+        await i18n.init();
+    } catch (e) {
+        console.warn('i18n init failed:', e);
+    } finally {
+        // Ensure initialized flag is set even on failure to prevent app hang
+        i18n.initialized = true;
+    }
+})();

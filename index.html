@@ -21,6 +21,7 @@
     <meta property="og:description" content="습관을 추적하고 목표를 달성하세요. 연속 달성 스트릭, 통계, 동기부여 명언과 함께.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dopabrain.com/habit-tracker/">
+    <link rel="canonical" href="https://dopabrain.com/habit-tracker/">
     <meta property="og:image" content="https://dopabrain.com/habit-tracker/icon-512.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Habit Tracker">
@@ -50,6 +51,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="app-loader" id="app-loader">
+        <div class="loader-spinner"></div>
+    </div>
     <div class="app-container">
         <!-- Header -->
         <header class="header">
@@ -97,7 +101,10 @@
         <section id="today-tab" class="tab-content active">
             <div class="today-container">
                 <div class="daily-challenge">
-                    <h2 data-i18n="today.challenge">Today's Challenge</h2>
+                    <div class="today-header">
+                        <h2 data-i18n="today.challenge">Today's Challenge</h2>
+                        <button id="add-habit-today-btn" class="btn btn-primary btn-add-habit" data-i18n="today.addHabit">+ Add Habit</button>
+                    </div>
                     <div id="todays-habits" class="habits-list">
                         <!-- Filled dynamically -->
                     </div>

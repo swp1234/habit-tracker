@@ -18,7 +18,10 @@
   "today": {
     "challenge": "आज की चुनौती",
     "completed": "पूर्ण",
-    "rate": "पूर्णता दर"
+    "rate": "पूर्णता दर",
+    "emptyState": "अपनी पहली आदत बनाएं!",
+    "emptySubtitle": "छोटी आदतें बड़े बदलाव लाती हैं",
+    "addHabit": "आदत जोड़ें"
   },
   "habits": {
     "title": "मेरी आदतें",

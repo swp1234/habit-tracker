@@ -18,7 +18,10 @@
   "today": {
     "challenge": "Today's Challenge",
     "completed": "Completed",
-    "rate": "Completion Rate"
+    "rate": "Completion Rate",
+    "emptyState": "Create your first habit!",
+    "emptySubtitle": "Small habits create big changes",
+    "addHabit": "Add Habit"
   },
   "habits": {
     "title": "My Habits",

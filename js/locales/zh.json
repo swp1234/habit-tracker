@@ -18,7 +18,10 @@
   "today": {
     "challenge": "今日挑战",
     "completed": "已完成",
-    "rate": "完成率"
+    "rate": "完成率",
+    "emptyState": "创建您的第一个习惯！",
+    "emptySubtitle": "小习惯创造大变化",
+    "addHabit": "添加习惯"
   },
   "habits": {
     "title": "我的习惯",

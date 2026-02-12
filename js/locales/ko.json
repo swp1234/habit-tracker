@@ -18,7 +18,10 @@
   "today": {
     "challenge": "오늘의 도전",
     "completed": "완료",
-    "rate": "달성률"
+    "rate": "달성률",
+    "emptyState": "첫 습관을 만들어보세요!",
+    "emptySubtitle": "작은 습관이 큰 변화를 만듭니다",
+    "addHabit": "습관 추가"
   },
   "habits": {
     "title": "내 습관",

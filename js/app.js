@@ -33,25 +33,49 @@ class HabitTracker {
     }
 
     async init() {
-        // Wait for i18n to be ready
-        if (!i18n.initialized) {
-            await new Promise(resolve => {
-                const checkInterval = setInterval(() => {
-                    if (i18n.initialized) {
+        try {
+            // Wait for i18n to be ready
+            if (typeof i18n !== 'undefined' && !i18n.initialized) {
+                await new Promise(resolve => {
+                    const checkInterval = setInterval(() => {
+                        if (i18n.initialized) {
+                            clearInterval(checkInterval);
+                            resolve();
+                        }
+                    }, 50);
+                    // Safety timeout: proceed after 1s even if i18n fails
+                    setTimeout(() => {
                         clearInterval(checkInterval);
                         resolve();
-                    }
-                }, 50);
+                    }, 1000);
+                });
+            }
+
+            this.loadData();
+            this.setupEventListeners();
+            this.renderUI();
+            this.showDailyQuote();
+
+            // Show welcome onboarding for first-time users
+            if (this.isFirstVisit) {
+                this.showWelcomeOnboarding();
+            }
+
+            // Listen for language changes
+            document.addEventListener('languageChanged', () => {
+                this.updateSampleHabitNames();
+                this.renderUI();
             });
+        } catch (e) {
+            console.error('HabitTracker init error:', e);
+        } finally {
+            // Always hide app loader, even if init fails
+            const loader = document.getElementById('app-loader');
+            if (loader) {
+                loader.classList.add('hidden');
+                setTimeout(() => loader.remove(), 300);
+            }
         }
-
-        this.loadData();
-        this.setupEventListeners();
-        this.renderUI();
-        this.showDailyQuote();
-
-        // Listen for language changes
-        document.addEventListener('languageChanged', () => this.renderUI());
     }
 
     /**
@@ -63,11 +87,18 @@ class HabitTracker {
             btn.addEventListener('click', (e) => this.switchTab(e.target.dataset.tab));
         });
 
-        // Add habit button
+        // Add habit buttons (Habits tab + Today tab)
         document.getElementById('add-habit-btn').addEventListener('click', () => {
             this.currentEditingId = null;
             this.openHabitModal();
         });
+        const addHabitTodayBtn = document.getElementById('add-habit-today-btn');
+        if (addHabitTodayBtn) {
+            addHabitTodayBtn.addEventListener('click', () => {
+                this.currentEditingId = null;
+                this.openHabitModal();
+            });
+        }
 
         // Modal actions
         document.getElementById('close-modal').addEventListener('click', () => this.closeHabitModal());
@@ -104,11 +135,25 @@ class HabitTracker {
         // Click outside to close modals
         document.addEventListener('click', (e) => {
             const habitModal = document.getElementById('habit-modal');
-            const premiumModal = document.getElementById('premium-modal');
-            if (habitModal && !habitModal.contains(e.target) && e.target.id !== 'add-habit-btn') {
+            if (habitModal && !habitModal.classList.contains('hidden') &&
+                !habitModal.querySelector('.modal-content').contains(e.target) &&
+                e.target.id !== 'add-habit-btn' && e.target.id !== 'add-habit-today-btn') {
                 this.closeHabitModal();
             }
         });
+    }
+
+    /**
+     * Helper: safely call i18n.t() with fallback
+     */
+    _t(key, fallback) {
+        try {
+            if (typeof i18n !== 'undefined' && i18n.t) {
+                const val = i18n.t(key);
+                if (val && val !== key) return val;
+            }
+        } catch (e) { /* ignore */ }
+        return fallback || key;
     }
 
     /**
@@ -117,8 +162,42 @@ class HabitTracker {
     loadData() {
         const saved = localStorage.getItem('habits');
         const completions = localStorage.getItem('completions');
-        if (saved) this.habits = JSON.parse(saved);
+        this.isFirstVisit = false;
+
+        if (saved) {
+            this.habits = JSON.parse(saved);
+        } else {
+            // First visit: add 3 localized sample habits
+            this.isFirstVisit = true;
+            const now = new Date().toISOString();
+            this.habits = [
+                { id: 'sample-1', name: this._t('templates.water', 'Drink Water'), icon: '💧', category: 'health', frequency: 'daily', goal: 30, createdAt: now, isSample: true },
+                { id: 'sample-2', name: this._t('templates.exercise', 'Exercise'), icon: '🏃', category: 'exercise', frequency: 'daily', goal: 30, createdAt: now, isSample: true },
+                { id: 'sample-3', name: this._t('templates.reading', 'Reading'), icon: '📚', category: 'learning', frequency: 'daily', goal: 30, createdAt: now, isSample: true }
+            ];
+            this.saveData();
+        }
         if (completions) this.completions = JSON.parse(completions);
+    }
+
+    /**
+     * Update sample habit names when language changes
+     */
+    updateSampleHabitNames() {
+        let changed = false;
+        this.habits.forEach(h => {
+            if (h.isSample) {
+                const templateKey = { 'sample-1': 'water', 'sample-2': 'exercise', 'sample-3': 'reading' }[h.id];
+                if (templateKey) {
+                    const newName = this._t(`templates.${templateKey}`, h.name);
+                    if (newName !== h.name) {
+                        h.name = newName;
+                        changed = true;
+                    }
+                }
+            }
+        });
+        if (changed) this.saveData();
     }
 
     /**
@@ -159,7 +238,7 @@ class HabitTracker {
 
         if (this.currentEditingId) {
             titleEl.setAttribute('data-i18n', 'modal.edit');
-            titleEl.textContent = i18n.t('modal.edit');
+            titleEl.textContent = this._t('modal.edit', 'Edit Habit');
             const habit = this.habits.find(h => h.id === this.currentEditingId);
             if (habit) {
                 document.getElementById('habit-name').value = habit.name;
@@ -172,7 +251,7 @@ class HabitTracker {
             }
         } else {
             titleEl.setAttribute('data-i18n', 'modal.add');
-            titleEl.textContent = i18n.t('modal.add');
+            titleEl.textContent = this._t('modal.add', 'Add Habit');
             document.getElementById('habit-icon').value = '🏃';
             document.querySelector('[value="🏃"]')?.classList.add('selected');
         }
@@ -309,6 +388,21 @@ class HabitTracker {
     }
 
     /**
+     * Show welcome onboarding for first-time users
+     */
+    showWelcomeOnboarding() {
+        const quoteEl = document.getElementById('daily-quote');
+        const authorEl = document.getElementById('quote-author');
+        if (quoteEl) {
+            quoteEl.textContent = this._t('today.emptySubtitle', 'Small habits create big changes');
+            quoteEl.style.fontSize = '1.3rem';
+        }
+        if (authorEl) {
+            authorEl.textContent = this._t('header.subtitle', 'Build better habits daily');
+        }
+    }
+
+    /**
      * Render TODAY tab
      */
     renderTodayTab() {
@@ -316,7 +410,15 @@ class HabitTracker {
         const today = this.getDateString();
 
         if (this.habits.length === 0) {
-            container.innerHTML = `<p class="empty-state">${i18n.t('habits.empty')}</p>`;
+            container.innerHTML = `
+                <div class="empty-state-onboarding">
+                    <div class="empty-state-emoji">🎯</div>
+                    <div class="empty-state-title">${this._t('today.emptyState', 'Create your first habit!')}</div>
+                    <div class="empty-state-subtitle">${this._t('today.emptySubtitle', 'Small habits create big changes')}</div>
+                    <button class="btn btn-primary btn-large" onclick="app.currentEditingId=null;app.openHabitModal();">
+                        ${this._t('today.addHabit', 'Add Habit')}
+                    </button>
+                </div>`;
             return;
         }
 
@@ -334,7 +436,7 @@ class HabitTracker {
                     </button>
                     <div class="habit-content">
                         <div class="habit-name">${habit.icon} ${habit.name}</div>
-                        <div class="habit-meta">${habit.category} • ${i18n.t(`form.${habit.frequency}`)}</div>
+                        <div class="habit-meta">${habit.category} • ${this._t(`form.${habit.frequency}`, habit.frequency)}</div>
                     </div>
                     <div class="habit-streak">
                         ${streak > 0 ? `🔥 ${streak}` : ''}
@@ -363,7 +465,7 @@ class HabitTracker {
             return `
                 <button class="template-btn" onclick="app.addFromTemplate('${template.name}', '${template.icon}', '${template.category}')">
                     <div class="template-icon">${template.icon}</div>
-                    <div class="template-name">${i18n.t(`templates.${template.name}`)}</div>
+                    <div class="template-name">${this._t(`templates.${template.name}`, template.name)}</div>
                 </button>
             `;
         }).join('');
@@ -371,7 +473,7 @@ class HabitTracker {
         // Render habits list
         const habitsList = document.getElementById('habits-list');
         if (this.habits.length === 0) {
-            habitsList.innerHTML = `<p class="empty-state">${i18n.t('habits.empty')}</p>`;
+            habitsList.innerHTML = `<p class="empty-state">${this._t('habits.empty', 'No habits yet. Create your first habit!')}</p>`;
             return;
         }
 
@@ -382,7 +484,7 @@ class HabitTracker {
                     <div class="habit-content">
                         <div class="habit-name">${habit.icon} ${habit.name}</div>
                         <div class="habit-meta">
-                            ${habit.category} • ${i18n.t(`form.${habit.frequency}`)} • Goal: ${habit.goal} days
+                            ${habit.category} • ${this._t(`form.${habit.frequency}`, habit.frequency)} • ${this._t('form.goal', 'Goal')}: ${habit.goal}
                         </div>
                     </div>
                     <div class="habit-streak">
@@ -403,7 +505,7 @@ class HabitTracker {
     addFromTemplate(templateName, icon, category) {
         this.habits.push({
             id: Date.now().toString(),
-            name: i18n.t(`templates.${templateName}`),
+            name: this._t(`templates.${templateName}`, templateName),
             icon,
             category,
             frequency: 'daily',
@@ -452,19 +554,19 @@ class HabitTracker {
 
         const analysis = `
             <div class="analysis-item">
-                <strong>${i18n.t('analysis.consistency')}</strong>
+                <strong>${this._t('analysis.consistency', 'Consistency')}</strong>
                 <p>${streak > 0 ? `Great! You have a ${streak}-day streak. Keep it up!` : 'Start building your streak!'}</p>
             </div>
             <div class="analysis-item">
-                <strong>${i18n.t('analysis.pattern')}</strong>
+                <strong>${this._t('analysis.pattern', 'Pattern Analysis')}</strong>
                 <p>You've completed "${habit.name}" ${completedDays} times. You're on the right track!</p>
             </div>
             <div class="analysis-item">
-                <strong>${i18n.t('analysis.recommendation')}</strong>
+                <strong>${this._t('analysis.recommendation', 'Recommendation')}</strong>
                 <p>To succeed, try completing this habit at the same time each day. Consistency is key!</p>
             </div>
             <div class="analysis-item">
-                <strong>${i18n.t('analysis.insight')}</strong>
+                <strong>${this._t('analysis.insight', 'Insight')}</strong>
                 <p>Research shows it takes 21 days to form a habit. You're ${Math.min(completedDays, 21)} days in!</p>
             </div>
         `;
@@ -607,7 +709,7 @@ class HabitTracker {
             return `
                 <div class="badge ${unlocked ? 'unlocked' : 'locked'}">
                     <div class="badge-icon">${badge.icon}</div>
-                    <div class="badge-name">${i18n.t(badge.name)}</div>
+                    <div class="badge-name">${this._t(badge.name, badge.id)}</div>
                     <div class="badge-progress">${progress}%</div>
                 </div>
             `;
@@ -750,7 +852,13 @@ class HabitTracker {
      */
     toggleTheme() {
         const isDark = document.body.classList.toggle('light-mode');
-        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        const theme = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
     }
 }
 
@@ -759,6 +867,11 @@ const app = new HabitTracker();
 
 // Load theme preference
 const savedTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', savedTheme);
 if (savedTheme === 'light') {
     document.body.classList.add('light-mode');
+}
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+    themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
 }

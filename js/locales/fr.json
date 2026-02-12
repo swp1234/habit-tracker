@@ -18,7 +18,10 @@
   "today": {
     "challenge": "Défi du Jour",
     "completed": "Complété",
-    "rate": "Taux de Complétion"
+    "rate": "Taux de Complétion",
+    "emptyState": "Créez votre première habitude !",
+    "emptySubtitle": "Les petites habitudes créent de grands changements",
+    "addHabit": "Ajouter Habitude"
   },
   "habits": {
     "title": "Mes Habitudes",
