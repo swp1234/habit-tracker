@@ -6,6 +6,7 @@ class HabitTracker {
     constructor() {
         this.habits = [];
         this.completions = {}; // { 'habitId_YYYY-MM-DD': true/false }
+        this._engagementFired = false; // GA4 engagement tracking
         this.quotes = [
             { text: "Success is the sum of small efforts repeated day in and day out.", author: "Robert Collier" },
             { text: "You are what you repeatedly do. Excellence, then, is not an act, but a habit.", author: "Aristotle" },
@@ -84,17 +85,22 @@ class HabitTracker {
     setupEventListeners() {
         // Tab switching
         document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => this.switchTab(e.target.dataset.tab));
+            btn.addEventListener('click', (e) => {
+                this._fireEngagement();
+                this.switchTab(e.target.dataset.tab);
+            });
         });
 
         // Add habit buttons (Habits tab + Today tab)
         document.getElementById('add-habit-btn').addEventListener('click', () => {
+            this._fireEngagement();
             this.currentEditingId = null;
             this.openHabitModal();
         });
         const addHabitTodayBtn = document.getElementById('add-habit-today-btn');
         if (addHabitTodayBtn) {
             addHabitTodayBtn.addEventListener('click', () => {
+                this._fireEngagement();
                 this.currentEditingId = null;
                 this.openHabitModal();
             });
@@ -141,6 +147,17 @@ class HabitTracker {
                 this.closeHabitModal();
             }
         });
+    }
+
+    /**
+     * Fire GA4 engagement event on first interaction to reduce bounce rate
+     */
+    _fireEngagement() {
+        if (this._engagementFired) return;
+        this._engagementFired = true;
+        if (typeof gtag === 'function') {
+            gtag('event', 'engagement', { event_category: 'habit_tracker', event_label: 'first_interaction' });
+        }
     }
 
     /**
@@ -328,6 +345,7 @@ class HabitTracker {
      * Toggle habit completion for today
      */
     toggleHabitCompletion(habitId) {
+        this._fireEngagement();
         const today = this.getDateString();
         const key = `${habitId}_${today}`;
         this.completions[key] = !this.completions[key];
