@@ -90,6 +90,11 @@
     "insight": "인사이트",
     "consistency": "일관성"
   },
+  "habit": {
+    "placeholder": "예: 아침 운동",
+    "allHabits": "전체 습관",
+    "enterName": "습관 이름을 입력하세요"
+  },
   "onboarding": {
     "title": "환영합니다! 사용법을 알려드릴게요",
     "step1": "원을 탭하여 완료하세요",

@@ -90,6 +90,11 @@
     "insight": "见解",
     "consistency": "一致性"
   },
+  "habit": {
+    "placeholder": "例：早晨运动",
+    "allHabits": "所有习惯",
+    "enterName": "请输入习惯名称"
+  },
   "onboarding": {
     "title": "欢迎！以下是使用方法",
     "step1": "点击圆圈完成",

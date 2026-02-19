@@ -104,6 +104,13 @@ class I18n {
                 element.textContent = translation;
             }
         });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+            const key = element.getAttribute('data-i18n-placeholder');
+            const translation = this.t(key);
+            if (translation && translation !== key) {
+                element.placeholder = translation;
+            }
+        });
     }
 
     /**

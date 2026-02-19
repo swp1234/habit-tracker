@@ -295,7 +295,7 @@ class HabitTracker {
         const frequency = document.getElementById('habit-frequency').value;
         const goal = parseInt(document.getElementById('habit-goal').value);
 
-        if (!name) return alert('Please enter a habit name');
+        if (!name) return alert(this._t('habit.enterName') || 'Please enter a habit name');
 
         if (this.currentEditingId) {
             const habit = this.habits.find(h => h.id === this.currentEditingId);
@@ -809,7 +809,7 @@ class HabitTracker {
     renderHeatmapTab() {
         // Populate habit selector
         const selector = document.getElementById('heatmap-habit');
-        selector.innerHTML = '<option value="">All Habits</option>' + this.habits.map(h =>
+        selector.innerHTML = `<option value="">${this._t('habit.allHabits', 'All Habits')}</option>` + this.habits.map(h =>
             `<option value="${h.id}">${h.icon} ${h.name}</option>`
         ).join('');
 

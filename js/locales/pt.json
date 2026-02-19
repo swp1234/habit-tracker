@@ -90,6 +90,11 @@
     "insight": "Perspectiva",
     "consistency": "Consistência"
   },
+  "habit": {
+    "placeholder": "Ex: Exercício matinal",
+    "allHabits": "Todos os hábitos",
+    "enterName": "Por favor insira o nome do hábito"
+  },
   "onboarding": {
     "title": "Bem-vindo! Veja como funciona",
     "step1": "Toque no circulo para completar",

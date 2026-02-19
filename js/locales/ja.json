@@ -90,6 +90,11 @@
     "insight": "インサイト",
     "consistency": "一貫性"
   },
+  "habit": {
+    "placeholder": "例: 朝の運動",
+    "allHabits": "全ての習慣",
+    "enterName": "習慣名を入力してください"
+  },
   "onboarding": {
     "title": "ようこそ！使い方をご説明します",
     "step1": "丸をタップして完了",

@@ -90,6 +90,11 @@
     "insight": "Wawasan",
     "consistency": "Konsistensi"
   },
+  "habit": {
+    "placeholder": "Contoh: Olahraga pagi",
+    "allHabits": "Semua kebiasaan",
+    "enterName": "Mohon masukkan nama kebiasaan"
+  },
   "onboarding": {
     "title": "Selamat datang! Begini caranya",
     "step1": "Ketuk lingkaran untuk menyelesaikan",

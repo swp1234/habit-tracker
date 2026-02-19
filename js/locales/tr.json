@@ -90,6 +90,11 @@
     "insight": "İçgörü",
     "consistency": "Tutarlılık"
   },
+  "habit": {
+    "placeholder": "Ör: Sabah egzersizi",
+    "allHabits": "Tüm alışkanlıklar",
+    "enterName": "Lütfen alışkanlık adını girin"
+  },
   "onboarding": {
     "title": "Hosgeldiniz! Nasil calistigini gosterelim",
     "step1": "Daireye dokunarak tamamlayin",

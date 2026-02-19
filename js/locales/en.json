@@ -90,6 +90,11 @@
     "insight": "Insight",
     "consistency": "Consistency"
   },
+  "habit": {
+    "placeholder": "e.g., Morning Exercise",
+    "allHabits": "All Habits",
+    "enterName": "Please enter a habit name"
+  },
   "onboarding": {
     "title": "Welcome! Here's how it works",
     "step1": "Tap the circle to complete",
