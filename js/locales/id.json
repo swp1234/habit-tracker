@@ -103,5 +103,12 @@
     "tapHere": "Ketuk di sini!",
     "dismiss": "Mengerti!",
     "welcomeQuote": "Kebiasaan kecil menciptakan perubahan besar"
+  },
+  "related": {
+    "title": "Jelajahi lainnya",
+    "routinePlanner": "Perencana rutinitas",
+    "pomodoroTimer": "Timer Pomodoro",
+    "todoList": "Daftar tugas",
+    "detoxTimer": "Timer detoks"
   }
 }

@@ -103,5 +103,12 @@
     "tapHere": "Tap here!",
     "dismiss": "Got it!",
     "welcomeQuote": "Small habits create big changes"
+  },
+  "related": {
+    "title": "More to Explore",
+    "routinePlanner": "Routine Planner",
+    "pomodoroTimer": "Pomodoro Timer",
+    "todoList": "Todo List",
+    "detoxTimer": "Detox Timer"
   }
 }

@@ -103,5 +103,12 @@
     "tapHere": "Buraya dokunun!",
     "dismiss": "Anladim!",
     "welcomeQuote": "Kucuk aliskanliklar buyuk degisimler yaratir"
+  },
+  "related": {
+    "title": "Daha fazla keşfet",
+    "routinePlanner": "Rutin planlayıcı",
+    "pomodoroTimer": "Pomodoro zamanlayıcı",
+    "todoList": "Yapılacaklar listesi",
+    "detoxTimer": "Detoks zamanlayıcı"
   }
 }

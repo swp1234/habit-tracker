@@ -103,5 +103,12 @@
     "tapHere": "यहां टैप करें!",
     "dismiss": "समझ गया!",
     "welcomeQuote": "छोटी आदतें बड़े बदलाव लाती हैं"
+  },
+  "related": {
+    "title": "और खोजें",
+    "routinePlanner": "रूटीन प्लानर",
+    "pomodoroTimer": "पोमोडोरो टाइमर",
+    "todoList": "टू-डू लिस्ट",
+    "detoxTimer": "डिटॉक्स टाइमर"
   }
 }

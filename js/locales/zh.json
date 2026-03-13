@@ -103,5 +103,12 @@
     "tapHere": "点击这里！",
     "dismiss": "知道了！",
     "welcomeQuote": "小习惯创造大变化"
+  },
+  "related": {
+    "title": "探索更多",
+    "routinePlanner": "日程规划",
+    "pomodoroTimer": "番茄钟",
+    "todoList": "待办清单",
+    "detoxTimer": "排毒计时器"
   }
 }

@@ -103,5 +103,12 @@
     "tapHere": "Hier tippen!",
     "dismiss": "Verstanden!",
     "welcomeQuote": "Kleine Gewohnheiten schaffen grosse Veranderungen"
+  },
+  "related": {
+    "title": "Mehr entdecken",
+    "routinePlanner": "Routineplaner",
+    "pomodoroTimer": "Pomodoro-Timer",
+    "todoList": "Aufgabenliste",
+    "detoxTimer": "Detox-Timer"
   }
 }

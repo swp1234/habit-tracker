@@ -103,5 +103,12 @@
     "tapHere": "Toque aqui!",
     "dismiss": "Entendi!",
     "welcomeQuote": "Pequenos habitos criam grandes mudancas"
+  },
+  "related": {
+    "title": "Explore mais",
+    "routinePlanner": "Planejador de rotina",
+    "pomodoroTimer": "Temporizador Pomodoro",
+    "todoList": "Lista de tarefas",
+    "detoxTimer": "Temporizador detox"
   }
 }

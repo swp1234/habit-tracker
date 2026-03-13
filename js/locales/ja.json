@@ -103,5 +103,12 @@
     "tapHere": "ここをタップ！",
     "dismiss": "わかりました！",
     "welcomeQuote": "小さな習慣が大きな変化を生み出します"
+  },
+  "related": {
+    "title": "もっと楽しむ",
+    "routinePlanner": "ルーティンプランナー",
+    "pomodoroTimer": "ポモドーロタイマー",
+    "todoList": "ToDoリスト",
+    "detoxTimer": "デトックスタイマー"
   }
 }

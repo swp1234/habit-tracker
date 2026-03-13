@@ -103,5 +103,12 @@
     "tapHere": "여기를 탭!",
     "dismiss": "알겠어요!",
     "welcomeQuote": "작은 습관이 큰 변화를 만듭니다"
+  },
+  "related": {
+    "title": "더 많은 콘텐츠",
+    "routinePlanner": "루틴 플래너",
+    "pomodoroTimer": "뽀모도로 타이머",
+    "todoList": "할 일 목록",
+    "detoxTimer": "디톡스 타이머"
   }
 }

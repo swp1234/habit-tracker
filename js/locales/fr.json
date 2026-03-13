@@ -103,5 +103,12 @@
     "tapHere": "Appuyez ici !",
     "dismiss": "Compris !",
     "welcomeQuote": "Les petites habitudes creent de grands changements"
+  },
+  "related": {
+    "title": "À découvrir",
+    "routinePlanner": "Planificateur de routine",
+    "pomodoroTimer": "Minuteur Pomodoro",
+    "todoList": "Liste de tâches",
+    "detoxTimer": "Minuteur détox"
   }
 }
