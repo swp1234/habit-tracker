@@ -110,5 +110,24 @@
     "pomodoroTimer": "Temporizador Pomodoro",
     "todoList": "Lista de tarefas",
     "detoxTimer": "Temporizador detox"
+  },
+  "about": {
+    "title": "Sobre o Rastreador de Hábitos",
+    "desc": "O Rastreador de Hábitos DopaBrain ajuda a construir melhores hábitos. Sequências, estatísticas, citações motivacionais e mapa de calor estilo GitHub. Totalmente grátis.",
+    "howTitle": "Como usar o Rastreador",
+    "howDesc": "Crie hábitos com 'Adicionar Hábito' ou escolha modelos rápidos. Marque os completados diariamente."
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "q1": "Quantos hábitos posso adicionar?",
+    "a1": "Ilimitados. Adicione e rastreie quantos hábitos quiser.",
+    "q2": "O que é o mapa de calor?",
+    "a2": "O mapa de calor é uma visualização anual estilo GitHub mostrando a intensidade de conclusão.",
+    "q3": "Meus dados estão seguros?",
+    "a3": "Sim, todos os dados são armazenados no LocalStorage e nunca enviados a nenhum servidor.",
+    "q4": "Como ganho emblemas?",
+    "a4": "Emblemas são ganhos automaticamente ao completar hábitos consistentemente.",
+    "q5": "Este app é gratuito?",
+    "a5": "Sim, todas as funcionalidades são completamente gratuitas."
   }
 }

@@ -110,5 +110,24 @@
     "pomodoroTimer": "Timer Pomodoro",
     "todoList": "Daftar tugas",
     "detoxTimer": "Timer detoks"
+  },
+  "about": {
+    "title": "Tentang Pelacak Kebiasaan",
+    "desc": "Pelacak Kebiasaan DopaBrain membantu Anda membangun kebiasaan lebih baik. Streak, statistik, kutipan motivasi, dan heatmap gaya GitHub. Sepenuhnya gratis.",
+    "howTitle": "Cara Menggunakan Pelacak",
+    "howDesc": "Buat kebiasaan dengan tombol 'Tambah Kebiasaan' atau pilih dari template cepat. Centang kebiasaan yang selesai setiap hari."
+  },
+  "faq": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "q1": "Berapa banyak kebiasaan yang bisa saya tambahkan?",
+    "a1": "Tidak terbatas. Tambahkan dan lacak sebanyak mungkin.",
+    "q2": "Apa itu heatmap?",
+    "a2": "Heatmap adalah visualisasi tahunan bergaya GitHub yang menunjukkan intensitas penyelesaian kebiasaan.",
+    "q3": "Apakah data saya aman?",
+    "a3": "Ya, semua data disimpan di LocalStorage dan tidak pernah dikirim ke server.",
+    "q4": "Bagaimana cara mendapatkan lencana?",
+    "a4": "Lencana diperoleh otomatis saat menyelesaikan kebiasaan secara konsisten.",
+    "q5": "Apakah aplikasi ini gratis?",
+    "a5": "Ya, semua fitur sepenuhnya gratis."
   }
 }

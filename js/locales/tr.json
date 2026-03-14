@@ -110,5 +110,24 @@
     "pomodoroTimer": "Pomodoro zamanlayıcı",
     "todoList": "Yapılacaklar listesi",
     "detoxTimer": "Detoks zamanlayıcı"
+  },
+  "about": {
+    "title": "Alışkanlık Takipçisi Hakkında",
+    "desc": "DopaBrain Alışkanlık Takipçisi daha iyi alışkanlıklar oluşturmanıza yardımcı olur. Seri, istatistik, motivasyon sözleri ve GitHub tarzı ısı haritası. Tamamen ücretsiz.",
+    "howTitle": "Takipçi Nasıl Kullanılır",
+    "howDesc": "'Alışkanlık Ekle' düğmesiyle yeni alışkanlık oluşturun veya hızlı şablonlardan seçin."
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "q1": "Kaç alışkanlık ekleyebilirim?",
+    "a1": "Sınırsız. İstediğiniz kadar ekleyin ve takip edin.",
+    "q2": "Isı haritası nedir?",
+    "a2": "Isı haritası, alışkanlık tamamlama yoğunluğunu gösteren GitHub tarzı yıllık görselleştirmedir.",
+    "q3": "Verilerim güvende mi?",
+    "a3": "Evet, tüm veriler LocalStorage'da saklanır ve sunucuya gönderilmez.",
+    "q4": "Rozetleri nasıl kazanırım?",
+    "a4": "Alışkanlıkları sürekli tamamladıkça rozetler otomatik kazanılır.",
+    "q5": "Bu uygulama ücretsiz mi?",
+    "a5": "Evet, tüm özellikler tamamen ücretsizdir."
   }
 }

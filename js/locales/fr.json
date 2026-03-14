@@ -110,5 +110,24 @@
     "pomodoroTimer": "Minuteur Pomodoro",
     "todoList": "Liste de tâches",
     "detoxTimer": "Minuteur détox"
+  },
+  "about": {
+    "title": "À propos du Suivi des Habitudes",
+    "desc": "Le Suivi des Habitudes DopaBrain vous aide à construire de meilleures habitudes. Séries, statistiques, citations motivantes et carte thermique style GitHub. Entièrement gratuit.",
+    "howTitle": "Comment utiliser le Suivi",
+    "howDesc": "Créez des habitudes avec 'Ajouter une habitude' ou choisissez des modèles rapides. Cochez les habitudes complétées quotidiennement."
+  },
+  "faq": {
+    "title": "Questions fréquemment posées",
+    "q1": "Combien d'habitudes puis-je ajouter ?",
+    "a1": "Illimité. Ajoutez et suivez autant d'habitudes que vous le souhaitez.",
+    "q2": "Qu'est-ce que la carte thermique ?",
+    "a2": "La carte thermique est une visualisation annuelle style GitHub montrant l'intensité de complétion.",
+    "q3": "Mes données sont-elles en sécurité ?",
+    "a3": "Oui, toutes les données sont stockées dans le LocalStorage et jamais envoyées à un serveur.",
+    "q4": "Comment gagner des badges ?",
+    "a4": "Les badges sont gagnés automatiquement en complétant régulièrement vos habitudes.",
+    "q5": "Cette application est-elle gratuite ?",
+    "a5": "Oui, toutes les fonctionnalités sont entièrement gratuites."
   }
 }
